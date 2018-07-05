@@ -1,0 +1,11 @@
+{
+  "name": "KYChain_core",
+  "version": "0.0.1",
+  "dependencies": {
+    "compression": "1.6.2",
+    "express": "4.15.2",
+    "fs": "0.0.1-security",
+    "libxmljs": "0.18.4",
+    "log4js": "1.1.1"
+  }
+}

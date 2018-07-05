@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Cni">
+		<xs:simpleType>
+			<xs:restriction base="xs:int"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Nom">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Sexe">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="M"/>
+				<xs:enumeration value="F"/>
+				<xs:enumeration value="O"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Prenom">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Identity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Cni"/>
+				<xs:element ref="Nom"/>
+				<xs:element ref="Prenom"/>
+				<xs:element ref="Sexe"/>
+				<xs:element ref="Naissance"/>
+				<xs:element ref="Ville"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Naissance">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="10"/>
+				<xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Adress">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Adresse"/>
+				<xs:element ref="CP"/>
+				<xs:element ref="Ville"/>
+				<xs:element ref="Pays"/>
+				<xs:element ref="Principale"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Adresse">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Ville">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Pays">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CP">
+		<xs:simpleType>
+			<xs:restriction base="xs:int"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Principale">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean"/>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

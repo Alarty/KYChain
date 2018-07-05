@@ -1,0 +1,20 @@
+{
+  "name": "kychaine",
+  "version": "1.0.0",
+  "description": "Simple API",
+  "main": "interface.js",
+  "dependencies": {
+    "async": "^2.1.5",
+    "colors": "^1.1.2",
+    "multichain-node": "^2.0.1-alpha24",
+    "node-rsa": "^0.4.2",
+    "readline-sync": "^1.4.7",
+    "rsync": "^0.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

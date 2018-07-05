@@ -1,0 +1,40 @@
+@startuml
+
+    :Organisme: as organisme
+    rectangle "Utilisateur déconnecté" as RecDeco {
+        (Se connecter) as Connect
+        (Visualiser une information) as Visu1
+    }
+
+
+	rectangle "Utilisateur connecté" as RecCo {
+		rectangle "Consultation" as Consu{
+		    (Init) as initC
+    	    (Visualiser une information) as Visu2
+    	    (Lister toutes ses informations) as ListVisu
+    	}
+    	rectangle "Edition" as edit{
+        		    (Init) as initE
+            	    (Ajouter une information) as add
+            	}
+	    (Se déconnecter) as disconnect
+	}
+
+    note "Avec une clef publique" as publique
+
+        organisme -> Connect
+        organisme - publique
+        publique -> Visu1
+        Visu1 .. Visu2
+
+
+    	Connect --> RecCo
+    	disconnect -> RecDeco
+
+    	initC -> ListVisu
+    	initE -> add
+
+    	ListVisu -> Visu2
+@enduml
+
+L'organisme peut ajouter une nouvelle information
